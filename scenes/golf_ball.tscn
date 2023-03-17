@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnss3jl2pvxi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ygq5n"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hiepr"]
+radius = 0.25
+
+[node name="GolfBall" type="RigidBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ygq5n")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_hiepr")
