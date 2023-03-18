@@ -24,6 +24,7 @@ environment = SubResource("Environment_8n6f7")
 
 [node name="Course" type="CSGCombiner3D" parent="."]
 use_collision = true
+collision_layer = 3
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Course"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
@@ -50,5 +51,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.4, 0)
 size = Vector3(1, 1, 4)
 material = ExtResource("2_3xq5c")
 
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Course"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0.5, -1)
+polygon = PackedVector2Array(0, 0, 0, 1, 2.3, 0, 1, 0)
+depth = 2.0
+material = ExtResource("1_0ke8v")
+
 [node name="GolfBall" parent="." instance=ExtResource("3_4g8gl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.1, 2.3, 0)
