@@ -10,7 +10,8 @@ func _on_info_pressed():
 	Info.visible = true
 
 func _on_start_pressed():
-	pass
+	SceneManager._change_scene("res://scenes/world.tscn")
+	SceneManager._temp()
 
 func _on_quit_pressed():
 	get_tree().quit()

@@ -48,3 +48,7 @@ func _swap_hud(hud):
 	var scene:PackedScene = load(hud)
 	var _scene:Node = scene.instantiate()
 	HUD.add_child(_scene)
+
+func _temp():
+	for child in HUD.get_children():
+		child.queue_free()
