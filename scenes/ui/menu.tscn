@@ -56,6 +56,7 @@ theme_override_font_sizes/font_size = 26
 text = "Quit"
 
 [node name="InfoPopup" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,10 +104,8 @@ text = "Hey!
 This is a simple prototype of what can later be a full game.
 
 Directions:
-S
-
-Objective:
-S"
+Mouse to aim the ball, hold Spacebar to control the power, try get in the hole.
+(It's just minigolf)"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

@@ -11,7 +11,7 @@ func _on_info_pressed():
 
 func _on_start_pressed():
 	SceneManager._change_scene("res://scenes/world.tscn")
-	SceneManager._temp()
+	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()

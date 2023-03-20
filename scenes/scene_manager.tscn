@@ -73,6 +73,7 @@ _data = {
 script = ExtResource("1_er67x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Transitions" type="Control" parent="CanvasLayer"]
 layout_mode = 3
