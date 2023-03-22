@@ -45,10 +45,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Info"
 
-[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Singleplayer" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Start"
+text = "Singleplayer"
+
+[node name="Multiplayer" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Multiplayer"
 
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -111,6 +116,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Info" to="." method="_on_info_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Singleplayer" to="." method="_on_singleplayer_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="InfoPopup/CloseBtn" to="." method="_on_close_btn_pressed"]

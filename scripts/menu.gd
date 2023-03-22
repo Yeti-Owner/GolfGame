@@ -9,9 +9,13 @@ func _ready():
 func _on_info_pressed():
 	Info.visible = true
 
-func _on_start_pressed():
+
+func _on_singleplayer_pressed():
 	SceneManager._change_scene("res://scenes/world.tscn")
 	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
+
+func _on_multiplayer_pressed():
+	SceneManager._change_scene("res://scenes/ui/multiplayer.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
