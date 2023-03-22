@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://1f58lfs60nfm"]
 
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_er67x"]
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_rgnyh"]
 
 [sub_resource type="Animation" id="Animation_y2j1r"]
 length = 0.001
@@ -70,7 +70,7 @@ _data = {
 }
 
 [node name="SceneManager" type="Node"]
-script = ExtResource("1_er67x")
+script = ExtResource("1_rgnyh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

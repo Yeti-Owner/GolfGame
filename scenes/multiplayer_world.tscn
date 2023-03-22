@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://c70am3goar2x7"]
+
+[ext_resource type="Script" path="res://scripts/multiplayer.gd" id="1_4ghsv"]
+[ext_resource type="Material" uid="uid://bvyp6vxfgk00u" path="res://resources/GroundMat.tres" id="1_vuncg"]
+[ext_resource type="Material" uid="uid://oeqc2cmeu1cq" path="res://resources/WallMat.tres" id="2_qhtfj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wl4of"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_igd6v"]
+sky_material = SubResource("ProceduralSkyMaterial_wl4of")
+
+[sub_resource type="Environment" id="Environment_8n6f7"]
+background_mode = 2
+sky = SubResource("Sky_igd6v")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="world" type="Node3D"]
+script = ExtResource("1_4ghsv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8n6f7")
+
+[node name="Course" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+use_collision = true
+collision_layer = 3
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+size = Vector3(16, 1, 2)
+material = ExtResource("1_vuncg")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7, 0, 6)
+size = Vector3(2, 1, 10)
+material = ExtResource("1_vuncg")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.4, 1.5)
+size = Vector3(14, 1, 1)
+material = ExtResource("2_qhtfj")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.4, -1.5)
+size = Vector3(16, 1, 1)
+material = ExtResource("2_qhtfj")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.4, 5)
+size = Vector3(1, 1, 14)
+material = ExtResource("2_qhtfj")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0.4, 7)
+size = Vector3(1, 1, 10)
+material = ExtResource("2_qhtfj")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0.4, 11.5)
+size = Vector3(2, 1, 1)
+material = ExtResource("2_qhtfj")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Course"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.4, 0)
+size = Vector3(1, 1, 4)
+material = ExtResource("2_qhtfj")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Course"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0.5, -1)
+polygon = PackedVector2Array(0, 0, 0, 1, 2.3, 0, 1, 0)
+depth = 2.0
+material = ExtResource("1_vuncg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -138.0
+offset_right = 140.5
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Multiplayer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host" type="Button" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Host"
+
+[node name="Join" type="Button" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Join"
+
+[node name="Address" type="LineEdit" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+placeholder_text = "Enter Join Address"
+alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Back"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/golf_ball.tscn")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/Back" to="." method="_on_back_pressed"]
