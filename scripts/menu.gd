@@ -15,7 +15,8 @@ func _on_singleplayer_pressed():
 
 func _on_multiplayer_pressed():
 	SceneManager._change_scene("res://scenes/multiplayer_world.tscn")
-	SceneManager._temp()
+	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
+	SceneManager.HUD.hide()
 
 func _on_quit_pressed():
 	get_tree().quit()

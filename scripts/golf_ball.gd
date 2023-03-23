@@ -48,5 +48,5 @@ func _process(_delta):
 		if Input.is_action_just_released("shoot") and Enabled:
 			Enabled = false
 			EventBus.emit_signal("Shooting")
-			var Strength = ((-CamH.global_transform.basis.z)*(float(EventBus.Power/100)))
+			var Strength = ((-CamH.global_transform.basis.z)*(float(EventBus.Power/110)))
 			Ball.apply_impulse(Strength, Vector3.ZERO)
