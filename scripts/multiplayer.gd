@@ -4,7 +4,7 @@ extends Node3D
 @onready var Address := $CanvasLayer/Menu/VBoxContainer/Address
 
 const Player := preload("res://scenes/golf_ball.tscn")
-const PORT := 9999
+const PORT := 5618
 
 var enet_peer := ENetMultiplayerPeer.new()
 
@@ -55,4 +55,4 @@ func _upnp_setup():
 	var map_result = upnp.add_port_mapping(PORT)
 	assert(map_result == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % map_result)
 	
-	print("Success! Join Address: %s" % upnp.query_external_address())
+	print("Join Address: %s" % upnp.query_external_address())
