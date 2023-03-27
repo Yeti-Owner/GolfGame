@@ -46,9 +46,24 @@ theme_override_font_sizes/font_size = 26
 text = "Info"
 
 [node name="Singleplayer" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Singleplayer"
+
+[node name="Name" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Text" type="TextEdit" parent="CenterContainer/VBoxContainer/Name"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name"
+
+[node name="Enter" type="Button" parent="CenterContainer/VBoxContainer/Name"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Enter"
 
 [node name="Multiplayer" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -117,6 +132,8 @@ autowrap_mode = 3
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Singleplayer" to="." method="_on_singleplayer_pressed"]
+[connection signal="text_changed" from="CenterContainer/VBoxContainer/Name/Text" to="." method="_on_text_text_changed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Name/Enter" to="." method="_on_enter_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="InfoPopup/CloseBtn" to="." method="_on_close_btn_pressed"]

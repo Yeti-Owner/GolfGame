@@ -11,3 +11,4 @@ func _shooting():
 
 func _process(delta):
 	Bar.value = EventBus.Power
+

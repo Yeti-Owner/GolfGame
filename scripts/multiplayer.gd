@@ -35,6 +35,7 @@ func _on_back_pressed():
 	self.queue_free()
 
 func _add_player(peer_id):
+	EventBus.emit_signal("AddedPlayer")
 	var player := Player.instantiate()
 	player.name = str(peer_id)
 	add_child(player)

@@ -55,7 +55,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Scoreboard" type="Panel" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 240.0
@@ -84,21 +84,62 @@ text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Holes" type="HBoxContainer" parent="Scoreboard/Values"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="1" type="Label" parent="Scoreboard/Values/Holes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 48
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Scoreboard/Values/Holes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 48
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Scoreboard/Values/Holes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 48
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Scoreboard/Values/Holes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 48
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Label" parent="Scoreboard/Values/Holes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 48
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Score" type="Label" parent="Scoreboard/Values"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 48
 text = "Score"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Ping" type="Label" parent="Scoreboard/Values"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 48
-text = "Ping"
 horizontal_alignment = 1
 vertical_alignment = 1
 
