@@ -131,6 +131,8 @@ text = "Back"
 _spawnable_scenes = PackedStringArray("res://scenes/golf_ball.tscn")
 spawn_path = NodePath("..")
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/Back" to="." method="_on_back_pressed"]
