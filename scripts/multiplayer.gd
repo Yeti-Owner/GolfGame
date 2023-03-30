@@ -5,8 +5,6 @@ extends Node3D
 
 const Player := preload("res://scenes/golf_ball.tscn")
 const PORT := 5618
-const database_url := ""
-const api_key := ""
 
 var enet_peer := ENetMultiplayerPeer.new()
 
@@ -57,19 +55,5 @@ func _upnp_setup():
 	
 	var map_result = upnp.add_port_mapping(PORT)
 	assert(map_result == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % map_result)
-	
-	print("Join Address: %s" % upnp.query_external_address())
-
-func _test():
-	
-	var headers = {
-	"Content-Type": "application/json",
-	"Authorization": "Bearer " + api_key
-	}
-	var data = {
-		"1": {
-			"ID": 123,
-			"Location": "New York City"
-		}
-	}
-
+		
+	EventBus._send_data(str(upnp.query_external_address()))

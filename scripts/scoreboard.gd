@@ -21,4 +21,4 @@ func _set_player_list():
 		var person = load("res://scenes/ui/player_0.tscn").instantiate()
 		Players.add_child(person)
 		person.TrackedPlayer = entry
-		print(entry)
+#		print(entry)

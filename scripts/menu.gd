@@ -16,7 +16,6 @@ func _on_singleplayer_pressed():
 	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
 
 func _on_multiplayer_pressed():
-	EventBus.PlayerEntries
 	SceneManager._change_scene("res://scenes/multiplayer_world.tscn")
 	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
 	SceneManager.HUD.hide()
@@ -34,4 +33,4 @@ func _on_enter_pressed():
 	$CenterContainer/VBoxContainer/Name/Text.editable = false
 	EventBus.PlayerEntries[$CenterContainer/VBoxContainer/Name/Text.text] = [0, 0, 0, 0, 0]
 	$CenterContainer/VBoxContainer/Multiplayer.disabled = false
-	print(EventBus.PlayerEntries)
+#	print(EventBus.PlayerEntries)
