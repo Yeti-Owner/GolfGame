@@ -15,17 +15,14 @@ func _process(_delta):
 	Bar.value = EventBus.Power
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("pause") and get_tree().is_paused() == false:
-		get_tree().set_pause(true)
+	if Input.is_action_just_pressed("pause") and $PauseMenu.visible == false:
 		$PauseMenu.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	elif Input.is_action_just_pressed("pause") and get_tree().is_paused() == true:
-		get_tree().set_pause(false)
+	elif Input.is_action_just_pressed("pause") and $PauseMenu.visible == true:
 		$PauseMenu.visible = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _on_resume_pressed():
-	get_tree().set_pause(false)
 	$PauseMenu.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 

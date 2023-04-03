@@ -26,7 +26,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
-window/size/borderless=true
 window/vsync/vsync_mode=3
 window/stretch/mode="viewport"
 
@@ -50,8 +49,8 @@ pause={
 
 [physics]
 
-3d/default_linear_damp=0.65
-3d/default_angular_damp=0.65
+3d/default_linear_damp=0.5
+3d/default_angular_damp=0.5
 
 [rendering]
 

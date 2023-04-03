@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnss3jl2pvxi"]
+[gd_scene load_steps=6 format=3 uid="uid://cnss3jl2pvxi"]
 
 [ext_resource type="Script" path="res://scripts/golf_ball.gd" id="1_o2myl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uw1bn"]
+bounce = 0.33
 
 [sub_resource type="SphereMesh" id="SphereMesh_ygq5n"]
 radius = 0.25
@@ -26,7 +29,7 @@ script = ExtResource("1_o2myl")
 [node name="Ball" type="RigidBody3D" parent="."]
 collision_layer = 2
 collision_mask = 3
-mass = 0.04
+physics_material_override = SubResource("PhysicsMaterial_uw1bn")
 
 [node name="Mesh" type="MeshInstance3D" parent="Ball"]
 mesh = SubResource("SphereMesh_ygq5n")

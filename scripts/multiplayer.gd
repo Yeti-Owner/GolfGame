@@ -26,7 +26,17 @@ func _on_join_pressed():
 	Menu.hide()
 	SceneManager.HUD.show()
 	
-	enet_peer.create_client(Address.text, PORT)
+	# Convert ID entered to IP in database
+	var location = int(Address.text)
+	
+	EventBus._ask_data(location)
+	
+	
+#	_join_lobby(str(location))
+
+func _join_lobby(location:String):
+	# Join via ID entered
+	enet_peer.create_client(location, PORT)
 	multiplayer.multiplayer_peer = enet_peer
 
 func _on_back_pressed():
@@ -55,5 +65,6 @@ func _upnp_setup():
 	
 	var map_result = upnp.add_port_mapping(PORT)
 	assert(map_result == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % map_result)
-		
+	
 	EventBus._send_data(str(upnp.query_external_address()))
+#	print(upnp.query_external_address())
